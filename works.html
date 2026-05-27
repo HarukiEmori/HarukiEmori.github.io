@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Works — Haruki Emori</title>
+  <meta name="description" content="Published papers, preprints, and patents by Haruki Emori." />
+  <script>(function(){try{if(localStorage.getItem('he-theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="bg-field"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+
+  <header class="site-header">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"></span>
+        <span>Haruki Emori <span class="brand-jp">江守陽規</span></span>
+      </a>
+      <nav class="primary" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">Curriculum Vitae</a></li>
+          <li><a href="works.html" class="active">Works</a></li>
+          <li><a href="presentations.html">Presentations</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cluster">
+        <button class="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">≡</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro wrap reveal">
+      <span class="eyebrow">Works</span>
+      <h1>Papers, preprints &amp; <span class="accent">patents</span>.</h1>
+      <p class="lead">
+        Search by title, co-author, or arXiv identifier. Every entry links to its DOI or preprint server.
+        For the most up-to-date list, see also my
+        <a href="https://scholar.google.com/citations?user=4PC7-ycAAAAJ">Google Scholar</a> and
+        <a href="https://orcid.org/0009-0007-2264-9192">ORCiD</a> profiles.
+      </p>
+    </section>
+
+    <section class="wrap reveal">
+      <div class="search-bar" style="margin-top:30px;">
+        <input id="work-search" type="search" placeholder="Search title, co-author, arXiv number…" aria-label="Search works">
+      </div>
+
+      <div class="sub-h">Published Papers</div>
+      <ul id="published-list" class="entry-list"></ul>
+
+      <div class="sub-h">Preprints</div>
+      <ul id="preprint-list" class="entry-list"></ul>
+
+      <div class="sub-h">Patents</div>
+      <ul id="patent-list" class="entry-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot-inner">
+      <div>© 2026 Haruki Emori · 江守陽規</div>
+      <div>
+        <a href="https://scholar.google.com/citations?user=4PC7-ycAAAAJ">Scholar</a> ·
+        <a href="https://orcid.org/0009-0007-2264-9192">ORCiD</a> ·
+        <a href="https://sites.google.com/elms.hokudai.ac.jp/haruki-emori/home">Hokudai page</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script>
+    renderPublications("published-list", window.PUBLISHED);
+    renderPublications("preprint-list", window.PREPRINTS);
+    renderPublications("patent-list",   window.PATENTS);
+    wireSimpleSearch("work-search");
+  </script>
+</body>
+</html>
