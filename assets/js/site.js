@@ -272,7 +272,7 @@ function startBloch(canvasId) {
     // pitch around X
     let cy = Math.cos(pitch), sy = Math.sin(pitch);
     let y2 = y1 * cy - z1 * sy, z2 = y1 * sy + z1 * cy, x2 = x1;
-    const R = size * 0.38;
+    const R = size * 0.32;
     const cxp = size / 2, cyp = size / 2;
     // simple perspective
     const persp = 1 / (1 + (z2 * 0.18));
@@ -362,7 +362,7 @@ function startBloch(canvasId) {
     grad.addColorStop(0.55, colors.blochB);
     grad.addColorStop(1, colors.blochC);
     ctx.beginPath();
-    ctx.arc(size / 2, size / 2, size * 0.38, 0, Math.PI * 2);
+    ctx.arc(size / 2, size / 2, size * 0.32, 0, Math.PI * 2);
     ctx.fillStyle = grad;
     ctx.globalAlpha = colors.light ? 0.9 : 0.92;
     ctx.fill();
