@@ -54,11 +54,11 @@
           </p>
         </div>
         <div class="page-visual">
-          <div class="bloch-wrap" aria-hidden="true">
-            <canvas id="bloch"></canvas>
-            <div class="bloch-hint">drag to rotate · Bloch sphere</div>
-        </div>
-      </div>
+          <div class="bloch-wrap" aria-hidden="true">
+            <canvas id="bloch"></canvas>
+            <div class="bloch-hint">drag to rotate · Bloch sphere</div>
+        </div>
+      </div>
     </section>
 
     <section class="wrap reveal">
@@ -121,5 +121,11 @@
   </footer>
 
   <script src="assets/js/site.js"></script>
+  <script>
+    // id="bloch" のcanvasに対してブロッホ球の描画と操作を有効化する
+    if (typeof startBloch === 'function') {
+      startBloch("bloch");
+    }
+  </script>
 </body>
 </html>
